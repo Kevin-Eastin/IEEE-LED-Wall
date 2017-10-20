@@ -1,0 +1,540 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$/tmp/xcH95NlQG.obj
+reset_vec CODE 0 0 0 2 2
+end_init CODE 0 2 2 2 2
+config CONFIG 0 8007 8007 1 2
+$dist/default/production/LED_Wall_2.0.X.production.obj
+cinit CODE 0 7FD 7FD 3 2
+text1 CODE 0 6EA 6EA 89 2
+text2 CODE 0 773 773 8A 2
+maintext CODE 0 6CB 6CB 1F 2
+cstackCOMMON COMMON 1 70 70 4 1
+stringtext1 STRCODE 0 800 800 2 2
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM 20-6F 1
+RAM A0-EF 1
+RAM 120-16F 1
+RAM 1A0-1EF 1
+RAM 220-26F 1
+RAM 2A0-2EF 1
+RAM 320-32F 1
+BANK0 20-6F 1
+BANK1 A0-EF 1
+BANK2 120-16F 1
+BANK3 1A0-1EF 1
+BANK4 220-26F 1
+BANK5 2A0-2EF 1
+BANK6 320-32F 1
+CONST 4-6CA 2
+CONST 802-1FFF 2
+ENTRY 4-6CA 2
+ENTRY 802-1FFF 2
+IDLOC 8000-8003 2
+SFR10 500-56F 1
+SFR11 580-5EF 1
+SFR12 600-66F 1
+SFR13 680-6EF 1
+SFR14 700-76F 1
+SFR15 780-7EF 1
+SFR16 800-86F 1
+SFR17 880-8EF 1
+SFR18 900-96F 1
+SFR19 980-9EF 1
+SFR20 A00-A6F 1
+SFR21 A80-AEF 1
+SFR22 B00-B6F 1
+SFR23 B80-BEF 1
+SFR24 C00-C6F 1
+SFR25 C80-CEF 1
+SFR26 D00-D6F 1
+SFR27 D80-DEF 1
+SFR28 E00-E6F 1
+SFR29 E80-EEF 1
+SFR30 F00-F6F 1
+SFR31 F80-FEF 1
+STACK 2000-21EF 1
+CODE 4-6CA 2
+CODE 802-1FFF 2
+SFR0 0-1F 1
+SFR1 80-9F 1
+SFR2 100-11F 1
+SFR3 180-19F 1
+SFR4 200-21F 1
+SFR5 280-29F 1
+SFR6 300-31F 1
+SFR7 380-3EF 1
+SFR8 400-46F 1
+SFR9 480-4EF 1
+BIGRAM 2000-21EF 1
+COMMON 74-7D 1
+CONFIG 8008-8008 2
+STRCODE 4-6CA 2
+STRCODE 802-1FFF 2
+STRING 4-6CA 2
+STRING 802-1FFF 2
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$dist/default/production/LED_Wall_2.0.X.production.obj
+7FD cinit CODE >300:/tmp/xcERd3V2Z
+7FD cinit CODE >303:/tmp/xcERd3V2Z
+7FD cinit CODE >309:/tmp/xcERd3V2Z
+7FD cinit CODE >311:/tmp/xcERd3V2Z
+7FE cinit CODE >312:/tmp/xcERd3V2Z
+773 text2 CODE >330:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+773 text2 CODE >334:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+776 text2 CODE >336:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+778 text2 CODE >337:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+779 text2 CODE >340:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+77C text2 CODE >342:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+77E text2 CODE >343:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+77F text2 CODE >346:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+782 text2 CODE >348:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+784 text2 CODE >349:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+785 text2 CODE >352:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+788 text2 CODE >354:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+78A text2 CODE >355:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+78B text2 CODE >358:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+78E text2 CODE >360:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+790 text2 CODE >361:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+791 text2 CODE >364:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+794 text2 CODE >366:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+796 text2 CODE >367:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+797 text2 CODE >370:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+79A text2 CODE >372:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+79C text2 CODE >373:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+79D text2 CODE >376:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+7A0 text2 CODE >378:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+7A2 text2 CODE >379:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+7A3 text2 CODE >384:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+7A6 text2 CODE >386:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+7A8 text2 CODE >387:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+7A9 text2 CODE >390:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+7AC text2 CODE >392:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+7AE text2 CODE >393:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+7AF text2 CODE >396:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+7B2 text2 CODE >398:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+7B4 text2 CODE >399:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+7B5 text2 CODE >402:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+7B8 text2 CODE >404:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+7BA text2 CODE >405:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+7BB text2 CODE >408:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+7BE text2 CODE >410:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+7C0 text2 CODE >411:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+7C1 text2 CODE >414:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+7C4 text2 CODE >416:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+7C6 text2 CODE >417:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+7C7 text2 CODE >420:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+7CA text2 CODE >422:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+7CC text2 CODE >423:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+7CD text2 CODE >426:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+7D0 text2 CODE >428:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+7D2 text2 CODE >429:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+7D3 text2 CODE >434:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+7D6 text2 CODE >435:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+7D7 text2 CODE >436:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+7D9 text2 CODE >439:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+7DB text2 CODE >440:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+7DC text2 CODE >441:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+7DE text2 CODE >444:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+7E0 text2 CODE >445:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+7E1 text2 CODE >446:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+7E3 text2 CODE >449:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+7E5 text2 CODE >450:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+7E6 text2 CODE >451:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+7E8 text2 CODE >454:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+7EA text2 CODE >455:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+7EB text2 CODE >456:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+7ED text2 CODE >459:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+7EF text2 CODE >460:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+7F0 text2 CODE >461:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+7F2 text2 CODE >464:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+7F4 text2 CODE >465:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+7F5 text2 CODE >466:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+7F7 text2 CODE >469:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+7F9 text2 CODE >470:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+7FA text2 CODE >471:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+7FC text2 CODE >472:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+6EA text1 CODE >39:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+6EA text1 CODE >43:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+6ED text1 CODE >45:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+6EF text1 CODE >46:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+6F0 text1 CODE >49:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+6F3 text1 CODE >51:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+6F5 text1 CODE >52:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+6F6 text1 CODE >55:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+6F9 text1 CODE >57:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+6FB text1 CODE >58:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+6FC text1 CODE >61:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+6FF text1 CODE >63:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+701 text1 CODE >64:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+702 text1 CODE >67:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+705 text1 CODE >69:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+707 text1 CODE >70:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+708 text1 CODE >73:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+70B text1 CODE >75:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+70D text1 CODE >76:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+70E text1 CODE >79:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+711 text1 CODE >81:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+713 text1 CODE >82:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+714 text1 CODE >85:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+717 text1 CODE >87:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+719 text1 CODE >88:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+71A text1 CODE >94:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+71D text1 CODE >95:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+71E text1 CODE >96:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+720 text1 CODE >99:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+722 text1 CODE >100:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+723 text1 CODE >101:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+725 text1 CODE >104:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+727 text1 CODE >105:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+728 text1 CODE >106:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+72A text1 CODE >109:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+72C text1 CODE >110:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+72D text1 CODE >111:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+72F text1 CODE >114:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+731 text1 CODE >115:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+732 text1 CODE >116:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+734 text1 CODE >119:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+736 text1 CODE >120:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+737 text1 CODE >121:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+739 text1 CODE >124:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+73B text1 CODE >125:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+73C text1 CODE >126:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+73E text1 CODE >129:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+740 text1 CODE >130:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+741 text1 CODE >131:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+743 text1 CODE >136:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+745 text1 CODE >138:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+747 text1 CODE >139:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+748 text1 CODE >142:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+74B text1 CODE >144:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+74D text1 CODE >145:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+74E text1 CODE >148:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+751 text1 CODE >150:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+753 text1 CODE >151:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+754 text1 CODE >154:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+757 text1 CODE >156:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+759 text1 CODE >157:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+75A text1 CODE >160:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+75D text1 CODE >162:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+75F text1 CODE >163:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+760 text1 CODE >166:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+763 text1 CODE >168:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+765 text1 CODE >169:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+766 text1 CODE >172:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+769 text1 CODE >174:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+76B text1 CODE >175:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+76C text1 CODE >178:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+76F text1 CODE >180:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+771 text1 CODE >181:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+772 text1 CODE >183:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+6CB maintext CODE >505:/tmp/xcERd3V2Z
+6CB maintext CODE >505:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+6CB maintext CODE >507:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+6CE maintext CODE >508:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+6D0 maintext CODE >509:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+6D2 maintext CODE >512:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+6D4 maintext CODE >514:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+6D7 maintext CODE >515:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+6DA maintext CODE >516:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+6E6 maintext CODE >517:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+6E8 maintext CODE >668:/Users/kevineastin/Desktop/NewFolder/LED Wall 2.0.X/main.c
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+___latbits 2 0 ABS 0 - dist/default/production/LED_Wall_2.0.X.production.obj
+__Hspace_0 8008 0 ABS 0 - -
+__Hspace_1 74 0 ABS 0 - -
+__Hspace_2 0 0 ABS 0 - -
+__Hspace_3 0 0 ABS 0 - -
+__Heeprom_data 0 0 EEDATA 3 eeprom_data -
+__CFG_MCLRE$ON 0 0 ABS 0 - dist/default/production/LED_Wall_2.0.X.production.obj
+main@c 72 0 COMMON 1 cstackCOMMON dist/default/production/LED_Wall_2.0.X.production.obj
+__Hstrings 0 0 ABS 0 strings -
+___sp 0 0 STACK 2 stack /tmp/xcH95NlQG.obj
+_main D96 0 CODE 0 maintext dist/default/production/LED_Wall_2.0.X.production.obj
+btemp 7E 0 ABS 0 - dist/default/production/LED_Wall_2.0.X.production.obj
+start 4 0 CODE 0 init /tmp/xcH95NlQG.obj
+__size_of_main 0 0 ABS 0 - dist/default/production/LED_Wall_2.0.X.production.obj
+__Hpowerup 0 0 CODE 0 powerup -
+intlevel0 0 0 ENTRY 0 functab /tmp/xcH95NlQG.obj
+intlevel1 0 0 ENTRY 0 functab /tmp/xcH95NlQG.obj
+intlevel2 0 0 ENTRY 0 functab /tmp/xcH95NlQG.obj
+intlevel3 0 0 ENTRY 0 functab /tmp/xcH95NlQG.obj
+intlevel4 0 0 ENTRY 0 functab /tmp/xcH95NlQG.obj
+intlevel5 0 0 ENTRY 0 functab /tmp/xcH95NlQG.obj
+wtemp0 7E 0 ABS 0 - dist/default/production/LED_Wall_2.0.X.production.obj
+__Hfunctab 0 0 ENTRY 0 functab -
+__Hclrtext 0 0 ABS 0 clrtext -
+__end_of_runBlue FFA 0 CODE 0 text2 dist/default/production/LED_Wall_2.0.X.production.obj
+_ANSELA 18C 0 ABS 0 - dist/default/production/LED_Wall_2.0.X.production.obj
+__Lmaintext 0 0 ABS 0 maintext -
+start_initialization FFA 0 CODE 0 cinit dist/default/production/LED_Wall_2.0.X.production.obj
+_OSCCON 99 0 ABS 0 - dist/default/production/LED_Wall_2.0.X.production.obj
+__end_of_runRed EE6 0 CODE 0 text1 dist/default/production/LED_Wall_2.0.X.production.obj
+___int_sp 0 0 STACK 2 stack /tmp/xcH95NlQG.obj
+__Hbank0 0 0 ABS 0 bank0 -
+__Hbank1 0 0 ABS 0 bank1 -
+__Hbank2 0 0 ABS 0 bank2 -
+__Hbank3 0 0 ABS 0 bank3 -
+__Hbank4 0 0 ABS 0 bank4 -
+__Hbank5 0 0 ABS 0 bank5 -
+__Hbank6 0 0 ABS 0 bank6 -
+__Hbank7 0 0 BANK7 1 bank7 -
+__Hbank8 0 0 BANK8 1 bank8 -
+__Hbank9 0 0 BANK9 1 bank9 -
+__Hcinit 1000 0 CODE 0 cinit -
+__Hidloc 0 0 IDLOC 0 idloc -
+__Hsfr10 0 0 ABS 0 sfr10 -
+__Hsfr11 0 0 ABS 0 sfr11 -
+__Hsfr12 0 0 ABS 0 sfr12 -
+__Hsfr13 0 0 ABS 0 sfr13 -
+__Hsfr14 0 0 ABS 0 sfr14 -
+__Hsfr15 0 0 ABS 0 sfr15 -
+__Hsfr16 0 0 ABS 0 sfr16 -
+__Hsfr17 0 0 ABS 0 sfr17 -
+__Hsfr18 0 0 ABS 0 sfr18 -
+__Hsfr19 0 0 ABS 0 sfr19 -
+__Hsfr20 0 0 ABS 0 sfr20 -
+__Hsfr21 0 0 ABS 0 sfr21 -
+__Hsfr22 0 0 ABS 0 sfr22 -
+__Hsfr23 0 0 ABS 0 sfr23 -
+__Hsfr24 0 0 ABS 0 sfr24 -
+__Hsfr25 0 0 ABS 0 sfr25 -
+__Hsfr26 0 0 ABS 0 sfr26 -
+__Hsfr27 0 0 ABS 0 sfr27 -
+__Hsfr28 0 0 ABS 0 sfr28 -
+__Hsfr29 0 0 ABS 0 sfr29 -
+__Hsfr30 0 0 ABS 0 sfr30 -
+__Hsfr31 0 0 ABS 0 sfr31 -
+__Hstack 0 0 STACK 2 stack -
+__Hbank10 0 0 BANK10 1 bank10 -
+__Hbank11 0 0 BANK11 1 bank11 -
+__Hbank12 0 0 BANK12 1 bank12 -
+__Hbank13 0 0 BANK13 1 bank13 -
+__Hbank14 0 0 BANK14 1 bank14 -
+__Hbank15 0 0 BANK15 1 bank15 -
+__Hbank16 0 0 BANK16 1 bank16 -
+__Hbank17 0 0 BANK17 1 bank17 -
+__Hbank18 0 0 BANK18 1 bank18 -
+__Hbank19 0 0 BANK19 1 bank19 -
+__Hbank20 0 0 BANK20 1 bank20 -
+__Hbank21 0 0 BANK21 1 bank21 -
+__Hbank22 0 0 BANK22 1 bank22 -
+__Hbank23 0 0 BANK23 1 bank23 -
+__Hbank24 0 0 BANK24 1 bank24 -
+__Hbank25 0 0 BANK25 1 bank25 -
+__Hbank26 0 0 BANK26 1 bank26 -
+__Hbank27 0 0 BANK27 1 bank27 -
+__Hbank28 0 0 BANK28 1 bank28 -
+__Hbank29 0 0 BANK29 1 bank29 -
+__Hbank30 0 0 BANK30 1 bank30 -
+__Hbank31 0 0 BANK31 1 bank31 -
+__Hbigram 0 0 ABS 0 bigram -
+__Hmaintext 0 0 ABS 0 maintext -
+__CFG_FOSC$INTOSC 0 0 ABS 0 - dist/default/production/LED_Wall_2.0.X.production.obj
+__Hcommon 0 0 ABS 0 common -
+__Hconfig 10010 0 CONFIG 0 config -
+__Lbank0 0 0 ABS 0 bank0 -
+__Lbank1 0 0 ABS 0 bank1 -
+__Lbank2 0 0 ABS 0 bank2 -
+__Lbank3 0 0 ABS 0 bank3 -
+__Lbank4 0 0 ABS 0 bank4 -
+__Lbank5 0 0 ABS 0 bank5 -
+__Lbank6 0 0 ABS 0 bank6 -
+__Lbank7 0 0 BANK7 1 bank7 -
+__Lbank8 0 0 BANK8 1 bank8 -
+__Lbank9 0 0 BANK9 1 bank9 -
+__Lcinit FFA 0 CODE 0 cinit -
+__Lidloc 0 0 IDLOC 0 idloc -
+__Lsfr10 0 0 ABS 0 sfr10 -
+__Lsfr11 0 0 ABS 0 sfr11 -
+__Lsfr12 0 0 ABS 0 sfr12 -
+__Lsfr13 0 0 ABS 0 sfr13 -
+__Lsfr14 0 0 ABS 0 sfr14 -
+__Lsfr15 0 0 ABS 0 sfr15 -
+__Lsfr16 0 0 ABS 0 sfr16 -
+__Lsfr17 0 0 ABS 0 sfr17 -
+__Lsfr18 0 0 ABS 0 sfr18 -
+__Lsfr19 0 0 ABS 0 sfr19 -
+__Lsfr20 0 0 ABS 0 sfr20 -
+__Lsfr21 0 0 ABS 0 sfr21 -
+__Lsfr22 0 0 ABS 0 sfr22 -
+__Lsfr23 0 0 ABS 0 sfr23 -
+__Lsfr24 0 0 ABS 0 sfr24 -
+__Lsfr25 0 0 ABS 0 sfr25 -
+__Lsfr26 0 0 ABS 0 sfr26 -
+__Lsfr27 0 0 ABS 0 sfr27 -
+__Lsfr28 0 0 ABS 0 sfr28 -
+__Lsfr29 0 0 ABS 0 sfr29 -
+__Lsfr30 0 0 ABS 0 sfr30 -
+__Lsfr31 0 0 ABS 0 sfr31 -
+__Lstack 0 0 STACK 2 stack -
+__Habs1 0 0 ABS 0 abs1 -
+__Hcode 0 0 ABS 0 code -
+__Hinit 4 0 CODE 0 init -
+__Hsfr0 0 0 ABS 0 sfr0 -
+__Hsfr1 0 0 ABS 0 sfr1 -
+__Hsfr2 0 0 ABS 0 sfr2 -
+__Hsfr3 0 0 ABS 0 sfr3 -
+__Hsfr4 0 0 ABS 0 sfr4 -
+__Hsfr5 0 0 ABS 0 sfr5 -
+__Hsfr6 0 0 ABS 0 sfr6 -
+__Hsfr7 0 0 ABS 0 sfr7 -
+__Hsfr8 0 0 ABS 0 sfr8 -
+__Hsfr9 0 0 ABS 0 sfr9 -
+__Htext 0 0 ABS 0 text -
+__Labs1 0 0 ABS 0 abs1 -
+__Lcode 0 0 ABS 0 code -
+__Linit 4 0 CODE 0 init -
+__Lsfr0 0 0 ABS 0 sfr0 -
+__Lsfr1 0 0 ABS 0 sfr1 -
+__Lsfr2 0 0 ABS 0 sfr2 -
+__Lsfr3 0 0 ABS 0 sfr3 -
+__Lsfr4 0 0 ABS 0 sfr4 -
+__Lsfr5 0 0 ABS 0 sfr5 -
+__Lsfr6 0 0 ABS 0 sfr6 -
+__Lsfr7 0 0 ABS 0 sfr7 -
+__Lsfr8 0 0 ABS 0 sfr8 -
+__Lsfr9 0 0 ABS 0 sfr9 -
+__Ltext 0 0 ABS 0 text -
+__pstringtext1 1000 0 STRCODE 0 stringtext1 dist/default/production/LED_Wall_2.0.X.production.obj
+__HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+__S0 8008 0 ABS 0 - -
+__S1 74 0 ABS 0 - -
+__S2 0 0 ABS 0 - -
+_runBlue EE6 0 CODE 0 text2 dist/default/production/LED_Wall_2.0.X.production.obj
+__Lintentry 4 0 CODE 0 intentry -
+reset_vec 0 0 CODE 0 reset_vec /tmp/xcH95NlQG.obj
+__Lstringtext1 0 0 ABS 0 stringtext1 -
+__Lbank10 0 0 BANK10 1 bank10 -
+__Lbank11 0 0 BANK11 1 bank11 -
+__Lbank12 0 0 BANK12 1 bank12 -
+__Lbank13 0 0 BANK13 1 bank13 -
+__Lbank14 0 0 BANK14 1 bank14 -
+__Lbank15 0 0 BANK15 1 bank15 -
+__Lbank16 0 0 BANK16 1 bank16 -
+__Lbank17 0 0 BANK17 1 bank17 -
+__Lbank18 0 0 BANK18 1 bank18 -
+__Lbank19 0 0 BANK19 1 bank19 -
+__Lbank20 0 0 BANK20 1 bank20 -
+__Lbank21 0 0 BANK21 1 bank21 -
+__Lbank22 0 0 BANK22 1 bank22 -
+__Lbank23 0 0 BANK23 1 bank23 -
+__Lbank24 0 0 BANK24 1 bank24 -
+__Lbank25 0 0 BANK25 1 bank25 -
+__Lbank26 0 0 BANK26 1 bank26 -
+__Lbank27 0 0 BANK27 1 bank27 -
+__Lbank28 0 0 BANK28 1 bank28 -
+__Lbank29 0 0 BANK29 1 bank29 -
+__Lbank30 0 0 BANK30 1 bank30 -
+__Lbank31 0 0 BANK31 1 bank31 -
+__pmaintext D96 0 CODE 0 maintext dist/default/production/LED_Wall_2.0.X.production.obj
+__Lbigram 0 0 ABS 0 bigram -
+__Lcommon 0 0 ABS 0 common -
+__Lconfig 1000E 0 CONFIG 0 config -
+__CFG_CP$OFF 0 0 ABS 0 - dist/default/production/LED_Wall_2.0.X.production.obj
+__CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production/LED_Wall_2.0.X.production.obj
+_runRed DD4 0 CODE 0 text1 dist/default/production/LED_Wall_2.0.X.production.obj
+stackhi 21EF 0 ABS 0 - /tmp/xcH95NlQG.obj
+stacklo 2000 0 ABS 0 - /tmp/xcH95NlQG.obj
+__end_ofmain@LEDS 1004 0 STRCODE 0 stringtext1 dist/default/production/LED_Wall_2.0.X.production.obj
+__Lspace_0 0 0 ABS 0 - -
+__Lspace_1 0 0 ABS 0 - -
+__Lspace_2 0 0 ABS 0 - -
+__Lspace_3 0 0 ABS 0 - -
+__Lend_init 4 0 CODE 0 end_init -
+__LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+end_of_initialization FFA 0 CODE 0 cinit dist/default/production/LED_Wall_2.0.X.production.obj
+__Hintentry 4 0 CODE 0 intentry -
+__Lstrings 0 0 ABS 0 strings -
+__Hreset_vec 4 0 CODE 0 reset_vec -
+__size_of_runRed 0 0 ABS 0 - dist/default/production/LED_Wall_2.0.X.production.obj
+__ptext1 DD4 0 CODE 0 text1 dist/default/production/LED_Wall_2.0.X.production.obj
+__ptext2 EE6 0 CODE 0 text2 dist/default/production/LED_Wall_2.0.X.production.obj
+__Lpowerup 0 0 CODE 0 powerup -
+__Leeprom_data 0 0 EEDATA 3 eeprom_data -
+__Lreset_vec 0 0 CODE 0 reset_vec -
+__Hstringtext1 0 0 ABS 0 stringtext1 -
+__end_of__initialization FFA 0 CODE 0 cinit dist/default/production/LED_Wall_2.0.X.production.obj
+__Lfunctab 0 0 ENTRY 0 functab -
+__Lclrtext 0 0 ABS 0 clrtext -
+__pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production/LED_Wall_2.0.X.production.obj
+__Hend_init 8 0 CODE 0 end_init -
+__end_of_main DD4 0 CODE 0 maintext dist/default/production/LED_Wall_2.0.X.production.obj
+_PORTA C 0 ABS 0 - dist/default/production/LED_Wall_2.0.X.production.obj
+_TRISA 8C 0 ABS 0 - dist/default/production/LED_Wall_2.0.X.production.obj
+__Hram 0 0 ABS 0 ram -
+__Lram 0 0 ABS 0 ram -
+__initialization FFA 0 CODE 0 cinit dist/default/production/LED_Wall_2.0.X.production.obj
+__size_of_runBlue 0 0 ABS 0 - dist/default/production/LED_Wall_2.0.X.production.obj
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+- 1 7E 2
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+cinit 0 7FD FFA 3 2
+text1 0 6EA DD4 89 2
+text2 0 773 EE6 8A 2
+maintext 0 6CB D96 1F 2
+cstackCOMMON 1 70 70 4 1
+stringtext1 0 800 1000 2 2
+reset_vec 0 0 0 4 2
+config 0 8007 1000E 1 2

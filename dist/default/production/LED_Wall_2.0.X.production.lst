@@ -1,0 +1,1194 @@
+
+
+Microchip Technology PIC LITE Macro Assembler V1.44 build -154322312 
+                                                                                               Fri Oct 20 16:35:29 2017
+
+Microchip Technology Omniscient Code Generator v1.44 (Free mode) build 201709140600
+     1                           	processor	16F1517
+     2                           	opt	pw 120
+     3                           	opt	lm
+     4                           	psect	stringtext1,global,class=STRCODE,delta=2
+     5                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     6                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1
+     7                           	psect	maintext,global,class=CODE,merge=1,split=1,delta=2
+     8                           	psect	text1,local,class=CODE,merge=1,delta=2
+     9                           	psect	text2,local,class=CODE,merge=1,delta=2
+    10                           	dabs	1,0x7E,2
+    11  0000                     
+    12                           ; Version 1.44
+    13                           ; Generated 14/09/2017 GMT
+    14                           ; 
+    15                           ; Copyright © 2017, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    16                           ; All rights reserved.
+    17                           ; 
+    18                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    19                           ; 
+    20                           ; Redistribution and use in source and binary forms, with or without modification, are
+    21                           ; permitted provided that the following conditions are met:
+    22                           ; 
+    23                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    24                           ;        conditions and the following disclaimer.
+    25                           ; 
+    26                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    27                           ;        of conditions and the following disclaimer in the documentation and/or other
+    28                           ;        materials provided with the distribution.
+    29                           ; 
+    30                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    31                           ;        software without specific prior written permission.
+    32                           ; 
+    33                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    34                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    35                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    36                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    37                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    38                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    39                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    40                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    41                           ; 
+    42                           ; 
+    43                           ; Code-generator required, PIC16F1517 Definitions
+    44                           ; 
+    45                           ; SFR Addresses
+    46  0000                     	;# 
+    47  0001                     	;# 
+    48  0002                     	;# 
+    49  0003                     	;# 
+    50  0004                     	;# 
+    51  0005                     	;# 
+    52  0006                     	;# 
+    53  0007                     	;# 
+    54  0008                     	;# 
+    55  0009                     	;# 
+    56  000A                     	;# 
+    57  000B                     	;# 
+    58  000C                     	;# 
+    59  000D                     	;# 
+    60  000E                     	;# 
+    61  000F                     	;# 
+    62  0010                     	;# 
+    63  0011                     	;# 
+    64  0012                     	;# 
+    65  0015                     	;# 
+    66  0016                     	;# 
+    67  0016                     	;# 
+    68  0017                     	;# 
+    69  0018                     	;# 
+    70  0019                     	;# 
+    71  001A                     	;# 
+    72  001B                     	;# 
+    73  001C                     	;# 
+    74  008C                     	;# 
+    75  008D                     	;# 
+    76  008E                     	;# 
+    77  008F                     	;# 
+    78  0090                     	;# 
+    79  0091                     	;# 
+    80  0092                     	;# 
+    81  0095                     	;# 
+    82  0096                     	;# 
+    83  0097                     	;# 
+    84  0099                     	;# 
+    85  009A                     	;# 
+    86  009B                     	;# 
+    87  009B                     	;# 
+    88  009C                     	;# 
+    89  009D                     	;# 
+    90  009E                     	;# 
+    91  010C                     	;# 
+    92  010D                     	;# 
+    93  010E                     	;# 
+    94  010F                     	;# 
+    95  0110                     	;# 
+    96  0116                     	;# 
+    97  0117                     	;# 
+    98  011D                     	;# 
+    99  018C                     	;# 
+   100  018D                     	;# 
+   101  018E                     	;# 
+   102  018F                     	;# 
+   103  0190                     	;# 
+   104  0191                     	;# 
+   105  0191                     	;# 
+   106  0192                     	;# 
+   107  0193                     	;# 
+   108  0193                     	;# 
+   109  0194                     	;# 
+   110  0195                     	;# 
+   111  0196                     	;# 
+   112  0197                     	;# 
+   113  0199                     	;# 
+   114  019A                     	;# 
+   115  019B                     	;# 
+   116  019B                     	;# 
+   117  019B                     	;# 
+   118  019B                     	;# 
+   119  019C                     	;# 
+   120  019C                     	;# 
+   121  019D                     	;# 
+   122  019E                     	;# 
+   123  019F                     	;# 
+   124  020D                     	;# 
+   125  0210                     	;# 
+   126  0211                     	;# 
+   127  0211                     	;# 
+   128  0212                     	;# 
+   129  0212                     	;# 
+   130  0213                     	;# 
+   131  0213                     	;# 
+   132  0214                     	;# 
+   133  0214                     	;# 
+   134  0215                     	;# 
+   135  0215                     	;# 
+   136  0215                     	;# 
+   137  0216                     	;# 
+   138  0216                     	;# 
+   139  0217                     	;# 
+   140  0217                     	;# 
+   141  0291                     	;# 
+   142  0291                     	;# 
+   143  0292                     	;# 
+   144  0293                     	;# 
+   145  0298                     	;# 
+   146  0298                     	;# 
+   147  0299                     	;# 
+   148  029A                     	;# 
+   149  0394                     	;# 
+   150  0395                     	;# 
+   151  0396                     	;# 
+   152  0FE4                     	;# 
+   153  0FE5                     	;# 
+   154  0FE6                     	;# 
+   155  0FE7                     	;# 
+   156  0FE8                     	;# 
+   157  0FE9                     	;# 
+   158  0FEA                     	;# 
+   159  0FEB                     	;# 
+   160  0FED                     	;# 
+   161  0FEE                     	;# 
+   162  0FEF                     	;# 
+   163                           
+   164                           	psect	stringtext1
+   165  0800                     __pstringtext1:	
+   166  0800                     main@LEDS:	
+   167  0800  341B               	retlw	27
+   168  0801  3400               	retlw	0
+   169  0802                     __end_ofmain@LEDS:	
+   170  000C                     _PORTA	set	12
+   171  008C                     _TRISA	set	140
+   172  0099                     _OSCCON	set	153
+   173  018C                     _ANSELA	set	396
+   174                           
+   175                           ; #config settings
+   176  0000                     
+   177                           	psect	cinit
+   178  07FD                     start_initialization:	
+   179  07FD                     __initialization:	
+   180  07FD                     end_of_initialization:	
+   181                           ;End of C runtime variable initialization code
+   182                           
+   183  07FD                     __end_of__initialization:	
+   184  07FD  0020               	movlb	0
+   185  07FE  3186  2ECB         	ljmp	_main	;jump to C main() function
+   186                           
+   187                           	psect	cstackCOMMON
+   188  0070                     __pcstackCOMMON:	
+   189  0070                     ?_runRed:	
+   190  0070                     ??_runRed:	
+   191                           ; 1 bytes @ 0x0
+   192                           
+   193  0070                     ?_runBlue:	
+   194                           ; 1 bytes @ 0x0
+   195                           
+   196  0070                     ??_runBlue:	
+   197                           ; 1 bytes @ 0x0
+   198                           
+   199  0070                     ??_main:	
+   200                           ; 1 bytes @ 0x0
+   201                           
+   202  0070                     ?_main:	
+   203                           ; 1 bytes @ 0x0
+   204                           
+   205                           
+   206                           ; 2 bytes @ 0x0
+   207  0070                     	ds	2
+   208  0072                     main@c:	
+   209                           
+   210                           ; 2 bytes @ 0x2
+   211  0072                     	ds	2
+   212                           
+   213                           	psect	maintext
+   214  06CB                     __pmaintext:	
+   215 ;;
+   216 ;;Main: autosize = 0, tempsize = 2, incstack = 0, save=0
+   217 ;;
+   218 ;; *************** function _main *****************
+   219 ;; Defined at:
+   220 ;;		line 505 in file "main.c"
+   221 ;; Parameters:    Size  Location     Type
+   222 ;;		None
+   223 ;; Auto vars:     Size  Location     Type
+   224 ;;  c               2    2[COMMON] int 
+   225 ;; Return value:  Size  Location     Type
+   226 ;;                  2   32[None  ] int 
+   227 ;; Registers used:
+   228 ;;		wreg, status,2, status,0, pclath, cstack
+   229 ;; Tracked objects:
+   230 ;;		On entry : B1F/0
+   231 ;;		On exit  : 0/0
+   232 ;;		Unchanged: 0/0
+   233 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
+   234 ;;      Params:         0       0       0       0       0       0       0       0
+   235 ;;      Locals:         2       0       0       0       0       0       0       0
+   236 ;;      Temps:          2       0       0       0       0       0       0       0
+   237 ;;      Totals:         4       0       0       0       0       0       0       0
+   238 ;;Total ram usage:        4 bytes
+   239 ;; Hardware stack levels required when called:    1
+   240 ;; This function calls:
+   241 ;;		_runBlue
+   242 ;;		_runRed
+   243 ;; This function is called by:
+   244 ;;		Startup code after reset
+   245 ;; This function uses a non-reentrant model
+   246 ;;
+   247                           
+   248                           
+   249                           ;psect for function _main
+   250  06CB                     _main:	
+   251                           
+   252                           ;main.c: 507: OSCCON = 0b01111010;
+   253                           
+   254                           ;incstack = 0
+   255                           ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
+   256  06CB  307A               	movlw	122
+   257  06CC  0021               	movlb	1	; select bank1
+   258  06CD  0099               	movwf	25	;volatile
+   259                           
+   260                           ;main.c: 508: ANSELA = 0b00000000;
+   261  06CE  0023               	movlb	3	; select bank3
+   262  06CF  018C               	clrf	12	;volatile
+   263                           
+   264                           ;main.c: 509: TRISA = 0b00000000;
+   265  06D0  0021               	movlb	1	; select bank1
+   266  06D1  018C               	clrf	12	;volatile
+   267                           
+   268                           ;main.c: 512: int c = 0;
+   269  06D2  01F2               	clrf	main@c
+   270  06D3  01F3               	clrf	main@c+1
+   271                           
+   272                           ;main.c: 513: const int LEDS = 27;
+   273                           ;main.c: 514: runBlue();
+   274  06D4  3187  2773  3186   	fcall	_runBlue
+   275                           
+   276                           ;main.c: 515: runBlue();
+   277  06D7  3187  2773  3186   	fcall	_runBlue
+   278                           
+   279                           ;main.c: 516: _delay((unsigned long)((1000000)*(16000000/4000000.0)));
+   280  06DA  3015               	movlw	21
+   281  06DB  00F1               	movwf	??_main+1
+   282  06DC  304B               	movlw	75
+   283  06DD  00F0               	movwf	??_main
+   284  06DE  30BE               	movlw	190
+   285  06DF                     u17:	
+   286  06DF  0B89               	decfsz	9,f
+   287  06E0  2EDF               	goto	u17
+   288  06E1  0BF0               	decfsz	??_main,f
+   289  06E2  2EDF               	goto	u17
+   290  06E3  0BF1               	decfsz	??_main+1,f
+   291  06E4  2EDF               	goto	u17
+   292  06E5  3200               	nop2
+   293                           
+   294                           ;main.c: 517: runRed();
+   295  06E6  3186  26EA         	fcall	_runRed
+   296  06E8  3180  2802         	ljmp	start
+   297  06EA                     __end_of_main:	
+   298                           
+   299                           	psect	text1
+   300  06EA                     __ptext1:	
+   301 ;; *************** function _runRed *****************
+   302 ;; Defined at:
+   303 ;;		line 39 in file "main.c"
+   304 ;; Parameters:    Size  Location     Type
+   305 ;;		None
+   306 ;; Auto vars:     Size  Location     Type
+   307 ;;		None
+   308 ;; Return value:  Size  Location     Type
+   309 ;;                  1    wreg      void 
+   310 ;; Registers used:
+   311 ;;		wreg, status,2
+   312 ;; Tracked objects:
+   313 ;;		On entry : 0/0
+   314 ;;		On exit  : 0/0
+   315 ;;		Unchanged: 0/0
+   316 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
+   317 ;;      Params:         0       0       0       0       0       0       0       0
+   318 ;;      Locals:         0       0       0       0       0       0       0       0
+   319 ;;      Temps:          0       0       0       0       0       0       0       0
+   320 ;;      Totals:         0       0       0       0       0       0       0       0
+   321 ;;Total ram usage:        0 bytes
+   322 ;; Hardware stack levels used:    1
+   323 ;; This function calls:
+   324 ;;		Nothing
+   325 ;; This function is called by:
+   326 ;;		_main
+   327 ;; This function uses a non-reentrant model
+   328 ;;
+   329                           
+   330                           
+   331                           ;psect for function _runRed
+   332  06EA                     _runRed:	
+   333                           
+   334                           ;main.c: 43: PORTA = 0b00000001;
+   335                           
+   336                           ;incstack = 0
+   337                           ; Regs used in _runRed: [wreg+status,2]
+   338  06EA  3001               	movlw	1
+   339  06EB  0020               	movlb	0	; select bank0
+   340  06EC  008C               	movwf	12	;volatile
+   341                           
+   342                           ;main.c: 45: PORTA = 0b00000000;
+   343                           
+   344                           ;main.c: 44: _delay((unsigned long)((.1)*(16000000/4000000.0)));
+   345  06ED  0020               	movlb	0	; select bank0
+   346  06EE  018C               	clrf	12	;volatile
+   347                           
+   348                           ;main.c: 46: _delay((unsigned long)((.3)*(16000000/4000000.0)));
+   349  06EF  0000               	nop
+   350                           
+   351                           ;main.c: 49: PORTA = 0b00000001;
+   352  06F0  3001               	movlw	1
+   353  06F1  0020               	movlb	0	; select bank0
+   354  06F2  008C               	movwf	12	;volatile
+   355                           
+   356                           ;main.c: 50: _delay((unsigned long)((.1)*(16000000/4000000.0)));
+   357                           ;main.c: 51: PORTA = 0b00000000;
+   358  06F3  0020               	movlb	0	; select bank0
+   359  06F4  018C               	clrf	12	;volatile
+   360                           
+   361                           ;main.c: 52: _delay((unsigned long)((.3)*(16000000/4000000.0)));
+   362  06F5  0000               	nop
+   363                           
+   364                           ;main.c: 55: PORTA = 0b00000001;
+   365  06F6  3001               	movlw	1
+   366  06F7  0020               	movlb	0	; select bank0
+   367  06F8  008C               	movwf	12	;volatile
+   368                           
+   369                           ;main.c: 57: PORTA = 0b00000000;
+   370                           
+   371                           ;main.c: 56: _delay((unsigned long)((.1)*(16000000/4000000.0)));
+   372  06F9  0020               	movlb	0	; select bank0
+   373  06FA  018C               	clrf	12	;volatile
+   374                           
+   375                           ;main.c: 58: _delay((unsigned long)((.3)*(16000000/4000000.0)));
+   376  06FB  0000               	nop
+   377                           
+   378                           ;main.c: 61: PORTA = 0b00000001;
+   379  06FC  3001               	movlw	1
+   380  06FD  0020               	movlb	0	; select bank0
+   381  06FE  008C               	movwf	12	;volatile
+   382                           
+   383                           ;main.c: 63: PORTA = 0b00000000;
+   384                           
+   385                           ;main.c: 62: _delay((unsigned long)((.1)*(16000000/4000000.0)));
+   386  06FF  0020               	movlb	0	; select bank0
+   387  0700  018C               	clrf	12	;volatile
+   388                           
+   389                           ;main.c: 64: _delay((unsigned long)((.3)*(16000000/4000000.0)));
+   390  0701  0000               	nop
+   391                           
+   392                           ;main.c: 67: PORTA = 0b00000001;
+   393  0702  3001               	movlw	1
+   394  0703  0020               	movlb	0	; select bank0
+   395  0704  008C               	movwf	12	;volatile
+   396                           
+   397                           ;main.c: 68: _delay((unsigned long)((.1)*(16000000/4000000.0)));
+   398                           ;main.c: 69: PORTA = 0b00000000;
+   399  0705  0020               	movlb	0	; select bank0
+   400  0706  018C               	clrf	12	;volatile
+   401                           
+   402                           ;main.c: 70: _delay((unsigned long)((.3)*(16000000/4000000.0)));
+   403  0707  0000               	nop
+   404                           
+   405                           ;main.c: 73: PORTA = 0b00000001;
+   406  0708  3001               	movlw	1
+   407  0709  0020               	movlb	0	; select bank0
+   408  070A  008C               	movwf	12	;volatile
+   409                           
+   410                           ;main.c: 75: PORTA = 0b00000000;
+   411                           
+   412                           ;main.c: 74: _delay((unsigned long)((.1)*(16000000/4000000.0)));
+   413  070B  0020               	movlb	0	; select bank0
+   414  070C  018C               	clrf	12	;volatile
+   415                           
+   416                           ;main.c: 76: _delay((unsigned long)((.3)*(16000000/4000000.0)));
+   417  070D  0000               	nop
+   418                           
+   419                           ;main.c: 79: PORTA = 0b00000001;
+   420  070E  3001               	movlw	1
+   421  070F  0020               	movlb	0	; select bank0
+   422  0710  008C               	movwf	12	;volatile
+   423                           
+   424                           ;main.c: 81: PORTA = 0b00000000;
+   425                           
+   426                           ;main.c: 80: _delay((unsigned long)((.1)*(16000000/4000000.0)));
+   427  0711  0020               	movlb	0	; select bank0
+   428  0712  018C               	clrf	12	;volatile
+   429                           
+   430                           ;main.c: 82: _delay((unsigned long)((.3)*(16000000/4000000.0)));
+   431  0713  0000               	nop
+   432                           
+   433                           ;main.c: 85: PORTA = 0b00000001;
+   434  0714  3001               	movlw	1
+   435  0715  0020               	movlb	0	; select bank0
+   436  0716  008C               	movwf	12	;volatile
+   437                           
+   438                           ;main.c: 86: _delay((unsigned long)((.1)*(16000000/4000000.0)));
+   439                           ;main.c: 87: PORTA = 0b00000000;
+   440  0717  0020               	movlb	0	; select bank0
+   441  0718  018C               	clrf	12	;volatile
+   442                           
+   443                           ;main.c: 88: _delay((unsigned long)((.3)*(16000000/4000000.0)));
+   444  0719  0000               	nop
+   445                           
+   446                           ;main.c: 94: PORTA = 0b00000001;
+   447  071A  3001               	movlw	1
+   448  071B  0020               	movlb	0	; select bank0
+   449  071C  008C               	movwf	12	;volatile
+   450                           
+   451                           ;main.c: 95: _delay((unsigned long)((0.5)*(16000000/4000000.0)));
+   452  071D  3200               	nop2	;2 cycle nop
+   453                           
+   454                           ;main.c: 96: PORTA = 0b00000000;
+   455  071E  0020               	movlb	0	; select bank0
+   456  071F  018C               	clrf	12	;volatile
+   457                           
+   458                           ;main.c: 99: PORTA = 0b00000001;
+   459  0720  3001               	movlw	1
+   460  0721  008C               	movwf	12	;volatile
+   461                           
+   462                           ;main.c: 100: _delay((unsigned long)((0.5)*(16000000/4000000.0)));
+   463  0722  3200               	nop2	;2 cycle nop
+   464                           
+   465                           ;main.c: 101: PORTA = 0b00000000;
+   466  0723  0020               	movlb	0	; select bank0
+   467  0724  018C               	clrf	12	;volatile
+   468                           
+   469                           ;main.c: 104: PORTA = 0b00000001;
+   470  0725  3001               	movlw	1
+   471  0726  008C               	movwf	12	;volatile
+   472                           
+   473                           ;main.c: 105: _delay((unsigned long)((0.5)*(16000000/4000000.0)));
+   474  0727  3200               	nop2	;2 cycle nop
+   475                           
+   476                           ;main.c: 106: PORTA = 0b00000000;
+   477  0728  0020               	movlb	0	; select bank0
+   478  0729  018C               	clrf	12	;volatile
+   479                           
+   480                           ;main.c: 109: PORTA = 0b00000001;
+   481  072A  3001               	movlw	1
+   482  072B  008C               	movwf	12	;volatile
+   483                           
+   484                           ;main.c: 110: _delay((unsigned long)((0.5)*(16000000/4000000.0)));
+   485  072C  3200               	nop2	;2 cycle nop
+   486                           
+   487                           ;main.c: 111: PORTA = 0b00000000;
+   488  072D  0020               	movlb	0	; select bank0
+   489  072E  018C               	clrf	12	;volatile
+   490                           
+   491                           ;main.c: 114: PORTA = 0b00000001;
+   492  072F  3001               	movlw	1
+   493  0730  008C               	movwf	12	;volatile
+   494                           
+   495                           ;main.c: 115: _delay((unsigned long)((0.5)*(16000000/4000000.0)));
+   496  0731  3200               	nop2	;2 cycle nop
+   497                           
+   498                           ;main.c: 116: PORTA = 0b00000000;
+   499  0732  0020               	movlb	0	; select bank0
+   500  0733  018C               	clrf	12	;volatile
+   501                           
+   502                           ;main.c: 119: PORTA = 0b00000001;
+   503  0734  3001               	movlw	1
+   504  0735  008C               	movwf	12	;volatile
+   505                           
+   506                           ;main.c: 120: _delay((unsigned long)((0.5)*(16000000/4000000.0)));
+   507  0736  3200               	nop2	;2 cycle nop
+   508                           
+   509                           ;main.c: 121: PORTA = 0b00000000;
+   510  0737  0020               	movlb	0	; select bank0
+   511  0738  018C               	clrf	12	;volatile
+   512                           
+   513                           ;main.c: 124: PORTA = 0b00000001;
+   514  0739  3001               	movlw	1
+   515  073A  008C               	movwf	12	;volatile
+   516                           
+   517                           ;main.c: 125: _delay((unsigned long)((0.5)*(16000000/4000000.0)));
+   518  073B  3200               	nop2	;2 cycle nop
+   519                           
+   520                           ;main.c: 126: PORTA = 0b00000000;
+   521  073C  0020               	movlb	0	; select bank0
+   522  073D  018C               	clrf	12	;volatile
+   523                           
+   524                           ;main.c: 129: PORTA = 0b00000001;
+   525  073E  3001               	movlw	1
+   526  073F  008C               	movwf	12	;volatile
+   527                           
+   528                           ;main.c: 130: _delay((unsigned long)((0.5)*(16000000/4000000.0)));
+   529  0740  3200               	nop2	;2 cycle nop
+   530                           
+   531                           ;main.c: 131: PORTA = 0b00000000;
+   532  0741  0020               	movlb	0	; select bank0
+   533  0742  018C               	clrf	12	;volatile
+   534                           
+   535                           ;main.c: 136: PORTA = 0b00000001;
+   536  0743  3001               	movlw	1
+   537  0744  008C               	movwf	12	;volatile
+   538                           
+   539                           ;main.c: 137: _delay((unsigned long)((.1)*(16000000/4000000.0)));
+   540                           ;main.c: 138: PORTA = 0b00000000;
+   541  0745  0020               	movlb	0	; select bank0
+   542  0746  018C               	clrf	12	;volatile
+   543                           
+   544                           ;main.c: 139: _delay((unsigned long)((.3)*(16000000/4000000.0)));
+   545  0747  0000               	nop
+   546                           
+   547                           ;main.c: 142: PORTA = 0b00000001;
+   548  0748  3001               	movlw	1
+   549  0749  0020               	movlb	0	; select bank0
+   550  074A  008C               	movwf	12	;volatile
+   551                           
+   552                           ;main.c: 144: PORTA = 0b00000000;
+   553                           
+   554                           ;main.c: 143: _delay((unsigned long)((.1)*(16000000/4000000.0)));
+   555  074B  0020               	movlb	0	; select bank0
+   556  074C  018C               	clrf	12	;volatile
+   557                           
+   558                           ;main.c: 145: _delay((unsigned long)((.3)*(16000000/4000000.0)));
+   559  074D  0000               	nop
+   560                           
+   561                           ;main.c: 148: PORTA = 0b00000001;
+   562  074E  3001               	movlw	1
+   563  074F  0020               	movlb	0	; select bank0
+   564  0750  008C               	movwf	12	;volatile
+   565                           
+   566                           ;main.c: 150: PORTA = 0b00000000;
+   567                           
+   568                           ;main.c: 149: _delay((unsigned long)((.1)*(16000000/4000000.0)));
+   569  0751  0020               	movlb	0	; select bank0
+   570  0752  018C               	clrf	12	;volatile
+   571                           
+   572                           ;main.c: 151: _delay((unsigned long)((.3)*(16000000/4000000.0)));
+   573  0753  0000               	nop
+   574                           
+   575                           ;main.c: 154: PORTA = 0b00000001;
+   576  0754  3001               	movlw	1
+   577  0755  0020               	movlb	0	; select bank0
+   578  0756  008C               	movwf	12	;volatile
+   579                           
+   580                           ;main.c: 155: _delay((unsigned long)((.1)*(16000000/4000000.0)));
+   581                           ;main.c: 156: PORTA = 0b00000000;
+   582  0757  0020               	movlb	0	; select bank0
+   583  0758  018C               	clrf	12	;volatile
+   584                           
+   585                           ;main.c: 157: _delay((unsigned long)((.3)*(16000000/4000000.0)));
+   586  0759  0000               	nop
+   587                           
+   588                           ;main.c: 160: PORTA = 0b00000001;
+   589  075A  3001               	movlw	1
+   590  075B  0020               	movlb	0	; select bank0
+   591  075C  008C               	movwf	12	;volatile
+   592                           
+   593                           ;main.c: 162: PORTA = 0b00000000;
+   594                           
+   595                           ;main.c: 161: _delay((unsigned long)((.1)*(16000000/4000000.0)));
+   596  075D  0020               	movlb	0	; select bank0
+   597  075E  018C               	clrf	12	;volatile
+   598                           
+   599                           ;main.c: 163: _delay((unsigned long)((.3)*(16000000/4000000.0)));
+   600  075F  0000               	nop
+   601                           
+   602                           ;main.c: 166: PORTA = 0b00000001;
+   603  0760  3001               	movlw	1
+   604  0761  0020               	movlb	0	; select bank0
+   605  0762  008C               	movwf	12	;volatile
+   606                           
+   607                           ;main.c: 168: PORTA = 0b00000000;
+   608                           
+   609                           ;main.c: 167: _delay((unsigned long)((.1)*(16000000/4000000.0)));
+   610  0763  0020               	movlb	0	; select bank0
+   611  0764  018C               	clrf	12	;volatile
+   612                           
+   613                           ;main.c: 169: _delay((unsigned long)((.3)*(16000000/4000000.0)));
+   614  0765  0000               	nop
+   615                           
+   616                           ;main.c: 172: PORTA = 0b00000001;
+   617  0766  3001               	movlw	1
+   618  0767  0020               	movlb	0	; select bank0
+   619  0768  008C               	movwf	12	;volatile
+   620                           
+   621                           ;main.c: 173: _delay((unsigned long)((.1)*(16000000/4000000.0)));
+   622                           ;main.c: 174: PORTA = 0b00000000;
+   623  0769  0020               	movlb	0	; select bank0
+   624  076A  018C               	clrf	12	;volatile
+   625                           
+   626                           ;main.c: 175: _delay((unsigned long)((.3)*(16000000/4000000.0)));
+   627  076B  0000               	nop
+   628                           
+   629                           ;main.c: 178: PORTA = 0b00000001;
+   630  076C  3001               	movlw	1
+   631  076D  0020               	movlb	0	; select bank0
+   632  076E  008C               	movwf	12	;volatile
+   633                           
+   634                           ;main.c: 180: PORTA = 0b00000000;
+   635                           
+   636                           ;main.c: 179: _delay((unsigned long)((.1)*(16000000/4000000.0)));
+   637  076F  0020               	movlb	0	; select bank0
+   638  0770  018C               	clrf	12	;volatile
+   639                           
+   640                           ;main.c: 181: _delay((unsigned long)((.3)*(16000000/4000000.0)));
+   641  0771  0000               	nop
+   642  0772  0008               	return
+   643  0773                     __end_of_runRed:	
+   644                           
+   645                           	psect	text2
+   646  0773                     __ptext2:	
+   647 ;; *************** function _runBlue *****************
+   648 ;; Defined at:
+   649 ;;		line 330 in file "main.c"
+   650 ;; Parameters:    Size  Location     Type
+   651 ;;		None
+   652 ;; Auto vars:     Size  Location     Type
+   653 ;;		None
+   654 ;; Return value:  Size  Location     Type
+   655 ;;                  1    wreg      void 
+   656 ;; Registers used:
+   657 ;;		wreg, status,2
+   658 ;; Tracked objects:
+   659 ;;		On entry : 0/0
+   660 ;;		On exit  : 0/0
+   661 ;;		Unchanged: 0/0
+   662 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6
+   663 ;;      Params:         0       0       0       0       0       0       0       0
+   664 ;;      Locals:         0       0       0       0       0       0       0       0
+   665 ;;      Temps:          0       0       0       0       0       0       0       0
+   666 ;;      Totals:         0       0       0       0       0       0       0       0
+   667 ;;Total ram usage:        0 bytes
+   668 ;; Hardware stack levels used:    1
+   669 ;; This function calls:
+   670 ;;		Nothing
+   671 ;; This function is called by:
+   672 ;;		_main
+   673 ;; This function uses a non-reentrant model
+   674 ;;
+   675                           
+   676                           
+   677                           ;psect for function _runBlue
+   678  0773                     _runBlue:	
+   679                           
+   680                           ;main.c: 334: PORTA = 0b00000001;
+   681                           
+   682                           ;incstack = 0
+   683                           ; Regs used in _runBlue: [wreg+status,2]
+   684  0773  3001               	movlw	1
+   685  0774  0020               	movlb	0	; select bank0
+   686  0775  008C               	movwf	12	;volatile
+   687                           
+   688                           ;main.c: 336: PORTA = 0b00000000;
+   689                           
+   690                           ;main.c: 335: _delay((unsigned long)((.1)*(16000000/4000000.0)));
+   691  0776  0020               	movlb	0	; select bank0
+   692  0777  018C               	clrf	12	;volatile
+   693                           
+   694                           ;main.c: 337: _delay((unsigned long)((.3)*(16000000/4000000.0)));
+   695  0778  0000               	nop
+   696                           
+   697                           ;main.c: 340: PORTA = 0b00000001;
+   698  0779  3001               	movlw	1
+   699  077A  0020               	movlb	0	; select bank0
+   700  077B  008C               	movwf	12	;volatile
+   701                           
+   702                           ;main.c: 341: _delay((unsigned long)((.1)*(16000000/4000000.0)));
+   703                           ;main.c: 342: PORTA = 0b00000000;
+   704  077C  0020               	movlb	0	; select bank0
+   705  077D  018C               	clrf	12	;volatile
+   706                           
+   707                           ;main.c: 343: _delay((unsigned long)((.3)*(16000000/4000000.0)));
+   708  077E  0000               	nop
+   709                           
+   710                           ;main.c: 346: PORTA = 0b00000001;
+   711  077F  3001               	movlw	1
+   712  0780  0020               	movlb	0	; select bank0
+   713  0781  008C               	movwf	12	;volatile
+   714                           
+   715                           ;main.c: 348: PORTA = 0b00000000;
+   716                           
+   717                           ;main.c: 347: _delay((unsigned long)((.1)*(16000000/4000000.0)));
+   718  0782  0020               	movlb	0	; select bank0
+   719  0783  018C               	clrf	12	;volatile
+   720                           
+   721                           ;main.c: 349: _delay((unsigned long)((.3)*(16000000/4000000.0)));
+   722  0784  0000               	nop
+   723                           
+   724                           ;main.c: 352: PORTA = 0b00000001;
+   725  0785  3001               	movlw	1
+   726  0786  0020               	movlb	0	; select bank0
+   727  0787  008C               	movwf	12	;volatile
+   728                           
+   729                           ;main.c: 354: PORTA = 0b00000000;
+   730                           
+   731                           ;main.c: 353: _delay((unsigned long)((.1)*(16000000/4000000.0)));
+   732  0788  0020               	movlb	0	; select bank0
+   733  0789  018C               	clrf	12	;volatile
+   734                           
+   735                           ;main.c: 355: _delay((unsigned long)((.3)*(16000000/4000000.0)));
+   736  078A  0000               	nop
+   737                           
+   738                           ;main.c: 358: PORTA = 0b00000001;
+   739  078B  3001               	movlw	1
+   740  078C  0020               	movlb	0	; select bank0
+   741  078D  008C               	movwf	12	;volatile
+   742                           
+   743                           ;main.c: 359: _delay((unsigned long)((.1)*(16000000/4000000.0)));
+   744                           ;main.c: 360: PORTA = 0b00000000;
+   745  078E  0020               	movlb	0	; select bank0
+   746  078F  018C               	clrf	12	;volatile
+   747                           
+   748                           ;main.c: 361: _delay((unsigned long)((.3)*(16000000/4000000.0)));
+   749  0790  0000               	nop
+   750                           
+   751                           ;main.c: 364: PORTA = 0b00000001;
+   752  0791  3001               	movlw	1
+   753  0792  0020               	movlb	0	; select bank0
+   754  0793  008C               	movwf	12	;volatile
+   755                           
+   756                           ;main.c: 366: PORTA = 0b00000000;
+   757                           
+   758                           ;main.c: 365: _delay((unsigned long)((.1)*(16000000/4000000.0)));
+   759  0794  0020               	movlb	0	; select bank0
+   760  0795  018C               	clrf	12	;volatile
+   761                           
+   762                           ;main.c: 367: _delay((unsigned long)((.3)*(16000000/4000000.0)));
+   763  0796  0000               	nop
+   764                           
+   765                           ;main.c: 370: PORTA = 0b00000001;
+   766  0797  3001               	movlw	1
+   767  0798  0020               	movlb	0	; select bank0
+   768  0799  008C               	movwf	12	;volatile
+   769                           
+   770                           ;main.c: 372: PORTA = 0b00000000;
+   771                           
+   772                           ;main.c: 371: _delay((unsigned long)((.1)*(16000000/4000000.0)));
+   773  079A  0020               	movlb	0	; select bank0
+   774  079B  018C               	clrf	12	;volatile
+   775                           
+   776                           ;main.c: 373: _delay((unsigned long)((.3)*(16000000/4000000.0)));
+   777  079C  0000               	nop
+   778                           
+   779                           ;main.c: 376: PORTA = 0b00000001;
+   780  079D  3001               	movlw	1
+   781  079E  0020               	movlb	0	; select bank0
+   782  079F  008C               	movwf	12	;volatile
+   783                           
+   784                           ;main.c: 377: _delay((unsigned long)((.1)*(16000000/4000000.0)));
+   785                           ;main.c: 378: PORTA = 0b00000000;
+   786  07A0  0020               	movlb	0	; select bank0
+   787  07A1  018C               	clrf	12	;volatile
+   788                           
+   789                           ;main.c: 379: _delay((unsigned long)((.3)*(16000000/4000000.0)));
+   790  07A2  0000               	nop
+   791                           
+   792                           ;main.c: 384: PORTA = 0b00000001;
+   793  07A3  3001               	movlw	1
+   794  07A4  0020               	movlb	0	; select bank0
+   795  07A5  008C               	movwf	12	;volatile
+   796                           
+   797                           ;main.c: 386: PORTA = 0b00000000;
+   798                           
+   799                           ;main.c: 385: _delay((unsigned long)((.1)*(16000000/4000000.0)));
+   800  07A6  0020               	movlb	0	; select bank0
+   801  07A7  018C               	clrf	12	;volatile
+   802                           
+   803                           ;main.c: 387: _delay((unsigned long)((.3)*(16000000/4000000.0)));
+   804  07A8  0000               	nop
+   805                           
+   806                           ;main.c: 390: PORTA = 0b00000001;
+   807  07A9  3001               	movlw	1
+   808  07AA  0020               	movlb	0	; select bank0
+   809  07AB  008C               	movwf	12	;volatile
+   810                           
+   811                           ;main.c: 392: PORTA = 0b00000000;
+   812                           
+   813                           ;main.c: 391: _delay((unsigned long)((.1)*(16000000/4000000.0)));
+   814  07AC  0020               	movlb	0	; select bank0
+   815  07AD  018C               	clrf	12	;volatile
+   816                           
+   817                           ;main.c: 393: _delay((unsigned long)((.3)*(16000000/4000000.0)));
+   818  07AE  0000               	nop
+   819                           
+   820                           ;main.c: 396: PORTA = 0b00000001;
+   821  07AF  3001               	movlw	1
+   822  07B0  0020               	movlb	0	; select bank0
+   823  07B1  008C               	movwf	12	;volatile
+   824                           
+   825                           ;main.c: 397: _delay((unsigned long)((.1)*(16000000/4000000.0)));
+   826                           ;main.c: 398: PORTA = 0b00000000;
+   827  07B2  0020               	movlb	0	; select bank0
+   828  07B3  018C               	clrf	12	;volatile
+   829                           
+   830                           ;main.c: 399: _delay((unsigned long)((.3)*(16000000/4000000.0)));
+   831  07B4  0000               	nop
+   832                           
+   833                           ;main.c: 402: PORTA = 0b00000001;
+   834  07B5  3001               	movlw	1
+   835  07B6  0020               	movlb	0	; select bank0
+   836  07B7  008C               	movwf	12	;volatile
+   837                           
+   838                           ;main.c: 404: PORTA = 0b00000000;
+   839                           
+   840                           ;main.c: 403: _delay((unsigned long)((.1)*(16000000/4000000.0)));
+   841  07B8  0020               	movlb	0	; select bank0
+   842  07B9  018C               	clrf	12	;volatile
+   843                           
+   844                           ;main.c: 405: _delay((unsigned long)((.3)*(16000000/4000000.0)));
+   845  07BA  0000               	nop
+   846                           
+   847                           ;main.c: 408: PORTA = 0b00000001;
+   848  07BB  3001               	movlw	1
+   849  07BC  0020               	movlb	0	; select bank0
+   850  07BD  008C               	movwf	12	;volatile
+   851                           
+   852                           ;main.c: 410: PORTA = 0b00000000;
+   853                           
+   854                           ;main.c: 409: _delay((unsigned long)((.1)*(16000000/4000000.0)));
+   855  07BE  0020               	movlb	0	; select bank0
+   856  07BF  018C               	clrf	12	;volatile
+   857                           
+   858                           ;main.c: 411: _delay((unsigned long)((.3)*(16000000/4000000.0)));
+   859  07C0  0000               	nop
+   860                           
+   861                           ;main.c: 414: PORTA = 0b00000001;
+   862  07C1  3001               	movlw	1
+   863  07C2  0020               	movlb	0	; select bank0
+   864  07C3  008C               	movwf	12	;volatile
+   865                           
+   866                           ;main.c: 415: _delay((unsigned long)((.1)*(16000000/4000000.0)));
+   867                           ;main.c: 416: PORTA = 0b00000000;
+   868  07C4  0020               	movlb	0	; select bank0
+   869  07C5  018C               	clrf	12	;volatile
+   870                           
+   871                           ;main.c: 417: _delay((unsigned long)((.3)*(16000000/4000000.0)));
+   872  07C6  0000               	nop
+   873                           
+   874                           ;main.c: 420: PORTA = 0b00000001;
+   875  07C7  3001               	movlw	1
+   876  07C8  0020               	movlb	0	; select bank0
+   877  07C9  008C               	movwf	12	;volatile
+   878                           
+   879                           ;main.c: 422: PORTA = 0b00000000;
+   880                           
+   881                           ;main.c: 421: _delay((unsigned long)((.1)*(16000000/4000000.0)));
+   882  07CA  0020               	movlb	0	; select bank0
+   883  07CB  018C               	clrf	12	;volatile
+   884                           
+   885                           ;main.c: 423: _delay((unsigned long)((.3)*(16000000/4000000.0)));
+   886  07CC  0000               	nop
+   887                           
+   888                           ;main.c: 426: PORTA = 0b00000001;
+   889  07CD  3001               	movlw	1
+   890  07CE  0020               	movlb	0	; select bank0
+   891  07CF  008C               	movwf	12	;volatile
+   892                           
+   893                           ;main.c: 428: PORTA = 0b00000000;
+   894                           
+   895                           ;main.c: 427: _delay((unsigned long)((.1)*(16000000/4000000.0)));
+   896  07D0  0020               	movlb	0	; select bank0
+   897  07D1  018C               	clrf	12	;volatile
+   898                           
+   899                           ;main.c: 429: _delay((unsigned long)((.3)*(16000000/4000000.0)));
+   900  07D2  0000               	nop
+   901                           
+   902                           ;main.c: 434: PORTA = 0b00000001;
+   903  07D3  3001               	movlw	1
+   904  07D4  0020               	movlb	0	; select bank0
+   905  07D5  008C               	movwf	12	;volatile
+   906                           
+   907                           ;main.c: 435: _delay((unsigned long)((0.5)*(16000000/4000000.0)));
+   908  07D6  3200               	nop2	;2 cycle nop
+   909                           
+   910                           ;main.c: 436: PORTA = 0b00000000;
+   911  07D7  0020               	movlb	0	; select bank0
+   912  07D8  018C               	clrf	12	;volatile
+   913                           
+   914                           ;main.c: 439: PORTA = 0b00000001;
+   915  07D9  3001               	movlw	1
+   916  07DA  008C               	movwf	12	;volatile
+   917                           
+   918                           ;main.c: 440: _delay((unsigned long)((0.5)*(16000000/4000000.0)));
+   919  07DB  3200               	nop2	;2 cycle nop
+   920                           
+   921                           ;main.c: 441: PORTA = 0b00000000;
+   922  07DC  0020               	movlb	0	; select bank0
+   923  07DD  018C               	clrf	12	;volatile
+   924                           
+   925                           ;main.c: 444: PORTA = 0b00000001;
+   926  07DE  3001               	movlw	1
+   927  07DF  008C               	movwf	12	;volatile
+   928                           
+   929                           ;main.c: 445: _delay((unsigned long)((0.5)*(16000000/4000000.0)));
+   930  07E0  3200               	nop2	;2 cycle nop
+   931                           
+   932                           ;main.c: 446: PORTA = 0b00000000;
+   933  07E1  0020               	movlb	0	; select bank0
+   934  07E2  018C               	clrf	12	;volatile
+   935                           
+   936                           ;main.c: 449: PORTA = 0b00000001;
+   937  07E3  3001               	movlw	1
+   938  07E4  008C               	movwf	12	;volatile
+   939                           
+   940                           ;main.c: 450: _delay((unsigned long)((0.5)*(16000000/4000000.0)));
+   941  07E5  3200               	nop2	;2 cycle nop
+   942                           
+   943                           ;main.c: 451: PORTA = 0b00000000;
+   944  07E6  0020               	movlb	0	; select bank0
+   945  07E7  018C               	clrf	12	;volatile
+   946                           
+   947                           ;main.c: 454: PORTA = 0b00000001;
+   948  07E8  3001               	movlw	1
+   949  07E9  008C               	movwf	12	;volatile
+   950                           
+   951                           ;main.c: 455: _delay((unsigned long)((0.5)*(16000000/4000000.0)));
+   952  07EA  3200               	nop2	;2 cycle nop
+   953                           
+   954                           ;main.c: 456: PORTA = 0b00000000;
+   955  07EB  0020               	movlb	0	; select bank0
+   956  07EC  018C               	clrf	12	;volatile
+   957                           
+   958                           ;main.c: 459: PORTA = 0b00000001;
+   959  07ED  3001               	movlw	1
+   960  07EE  008C               	movwf	12	;volatile
+   961                           
+   962                           ;main.c: 460: _delay((unsigned long)((0.5)*(16000000/4000000.0)));
+   963  07EF  3200               	nop2	;2 cycle nop
+   964                           
+   965                           ;main.c: 461: PORTA = 0b00000000;
+   966  07F0  0020               	movlb	0	; select bank0
+   967  07F1  018C               	clrf	12	;volatile
+   968                           
+   969                           ;main.c: 464: PORTA = 0b00000001;
+   970  07F2  3001               	movlw	1
+   971  07F3  008C               	movwf	12	;volatile
+   972                           
+   973                           ;main.c: 465: _delay((unsigned long)((0.5)*(16000000/4000000.0)));
+   974  07F4  3200               	nop2	;2 cycle nop
+   975                           
+   976                           ;main.c: 466: PORTA = 0b00000000;
+   977  07F5  0020               	movlb	0	; select bank0
+   978  07F6  018C               	clrf	12	;volatile
+   979                           
+   980                           ;main.c: 469: PORTA = 0b00000001;
+   981  07F7  3001               	movlw	1
+   982  07F8  008C               	movwf	12	;volatile
+   983                           
+   984                           ;main.c: 470: _delay((unsigned long)((0.5)*(16000000/4000000.0)));
+   985  07F9  3200               	nop2	;2 cycle nop
+   986                           
+   987                           ;main.c: 471: PORTA = 0b00000000;
+   988  07FA  0020               	movlb	0	; select bank0
+   989  07FB  018C               	clrf	12	;volatile
+   990  07FC  0008               	return
+   991  07FD                     __end_of_runBlue:	
+   992  007E                     btemp	set	126	;btemp
+   993  007E                     wtemp0	set	126
+
+
+Data Sizes:
+    Strings     0
+    Constant    2
+    Data        0
+    BSS         0
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON           14      4       4
+    BANK0            80      0       0
+    BANK1            80      0       0
+    BANK2            80      0       0
+    BANK3            80      0       0
+    BANK4            80      0       0
+    BANK5            80      0       0
+    BANK6            16      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMMON
+
+    None.
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK4
+
+    None.
+
+Critical Paths under _main in BANK5
+
+    None.
+
+Critical Paths under _main in BANK6
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 4     4      0       0
+                                              0 COMMON     4     4      0
+                            _runBlue
+                             _runRed
+ ---------------------------------------------------------------------------------
+ (1) _runRed                                               0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _runBlue                                              0     0      0       0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 1
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _runBlue
+   _runRed
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BIGRAM             1F0      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+BITCOMMON            E      0       0       1        0.0%
+BITSFR0              0      0       0       1        0.0%
+SFR0                 0      0       0       1        0.0%
+COMMON               E      4       4       2       28.6%
+BITSFR1              0      0       0       2        0.0%
+SFR1                 0      0       0       2        0.0%
+BITSFR2              0      0       0       3        0.0%
+SFR2                 0      0       0       3        0.0%
+STACK                0      0       0       3        0.0%
+BITSFR3              0      0       0       4        0.0%
+SFR3                 0      0       0       4        0.0%
+ABS                  0      0       0       4        0.0%
+BITBANK0            50      0       0       5        0.0%
+BITSFR4              0      0       0       5        0.0%
+SFR4                 0      0       0       5        0.0%
+BANK0               50      0       0       6        0.0%
+BITSFR5              0      0       0       6        0.0%
+SFR5                 0      0       0       6        0.0%
+BITBANK1            50      0       0       7        0.0%
+BITSFR6              0      0       0       7        0.0%
+SFR6                 0      0       0       7        0.0%
+BANK1               50      0       0       8        0.0%
+BITSFR7              0      0       0       8        0.0%
+SFR7                 0      0       0       8        0.0%
+BITBANK2            50      0       0       9        0.0%
+BITSFR8              0      0       0       9        0.0%
+SFR8                 0      0       0       9        0.0%
+BANK2               50      0       0      10        0.0%
+BITSFR9              0      0       0      10        0.0%
+SFR9                 0      0       0      10        0.0%
+BITBANK3            50      0       0      11        0.0%
+BITSFR10             0      0       0      11        0.0%
+SFR10                0      0       0      11        0.0%
+BANK3               50      0       0      12        0.0%
+BITSFR11             0      0       0      12        0.0%
+SFR11                0      0       0      12        0.0%
+BITBANK4            50      0       0      13        0.0%
+BITSFR12             0      0       0      13        0.0%
+SFR12                0      0       0      13        0.0%
+BANK4               50      0       0      14        0.0%
+BITSFR13             0      0       0      14        0.0%
+SFR13                0      0       0      14        0.0%
+BITBANK5            50      0       0      15        0.0%
+BITSFR14             0      0       0      15        0.0%
+SFR14                0      0       0      15        0.0%
+BANK5               50      0       0      16        0.0%
+BITSFR15             0      0       0      16        0.0%
+SFR15                0      0       0      16        0.0%
+BITBANK6            10      0       0      17        0.0%
+BITSFR16             0      0       0      17        0.0%
+SFR16                0      0       0      17        0.0%
+BANK6               10      0       0      18        0.0%
+BITSFR17             0      0       0      18        0.0%
+SFR17                0      0       0      18        0.0%
+BITSFR18             0      0       0      19        0.0%
+SFR18                0      0       0      19        0.0%
+DATA                 0      0       0      19        0.0%
+BITSFR19             0      0       0      20        0.0%
+SFR19                0      0       0      20        0.0%
+BITSFR20             0      0       0      21        0.0%
+SFR20                0      0       0      21        0.0%
+BITSFR21             0      0       0      22        0.0%
+SFR21                0      0       0      22        0.0%
+BITSFR22             0      0       0      23        0.0%
+SFR22                0      0       0      23        0.0%
+BITSFR23             0      0       0      24        0.0%
+SFR23                0      0       0      24        0.0%
+BITSFR24             0      0       0      25        0.0%
+SFR24                0      0       0      25        0.0%
+BITSFR25             0      0       0      26        0.0%
+SFR25                0      0       0      26        0.0%
+BITSFR26             0      0       0      27        0.0%
+SFR26                0      0       0      27        0.0%
+BITSFR27             0      0       0      28        0.0%
+SFR27                0      0       0      28        0.0%
+BITSFR28             0      0       0      29        0.0%
+SFR28                0      0       0      29        0.0%
+BITSFR29             0      0       0      30        0.0%
+SFR29                0      0       0      30        0.0%
+BITSFR30             0      0       0      31        0.0%
+SFR30                0      0       0      31        0.0%
+BITSFR31             0      0       0      32        0.0%
+SFR31                0      0       0      32        0.0%
+
+
+Microchip Technology PIC Macro Assembler V1.44 build -154322312 
+Symbol Table                                                                                   Fri Oct 20 16:35:29 2017
+
+            __CFG_CP$OFF 0000                       u17 06DF                      wreg 0009  
+                   _main 06CB                     btemp 007E                     start 0002  
+          __CFG_MCLRE$ON 0000                    ?_main 0070            __CFG_WDTE$OFF 0000  
+                  _PORTA 000C                    _TRISA 008C                    main@c 0072  
+        __end_of_runBlue 07FD                    wtemp0 007E          __initialization 07FD  
+           __end_of_main 06EA                   ??_main 0070                   _ANSELA 018C  
+                 _OSCCON 0099                   _runRed 06EA         __end_ofmain@LEDS 0802  
+              ??_runBlue 0070  __end_of__initialization 07FD           __pcstackCOMMON 0070  
+             __pmaintext 06CB                  ?_runRed 0070                  __ptext1 06EA  
+                __ptext2 0773          __size_of_runRed 0089                  _runBlue 0773  
+   end_of_initialization 07FD         __CFG_FOSC$INTOSC 0000           __end_of_runRed 0773  
+    start_initialization 07FD                 ??_runRed 0070                ___latbits 0002  
+               ?_runBlue 0070         __size_of_runBlue 008A            __size_of_main 001F  
+               main@LEDS 0800            __pstringtext1 0800  
